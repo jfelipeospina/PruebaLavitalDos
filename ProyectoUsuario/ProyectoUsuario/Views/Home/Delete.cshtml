@@ -1,0 +1,52 @@
+﻿@model ProyectoUsuario.Models.UserDetailsModel
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Borrar Usuarios</title>
+</head>
+<body>
+	<h3 style="color:Red">Esta seguro que quiere borrar el registro?</h3>
+	@using (Html.BeginForm())
+	{
+		<fieldset>
+			<legend style="font-family:Arial Black;color:Green">Customer</legend>
+			@Html.HiddenFor(model => model.Id)
+			<div class="display-label" style="font-family:Arial Black">
+				@Html.DisplayNameFor(model => model.Usuario)
+			</div>
+			<div class="display-field" style="color:Blue">
+				@Html.DisplayFor(model => model.Usuario)
+			</div>
+			<div class="display-label" style="font-family:Arial Black">
+				@Html.DisplayNameFor(model => model.Nombre)
+			</div>
+			<div class="display-field" style="color:Blue">
+				@Html.DisplayFor(model => model.Nombre)
+			</div>
+			<div class="display-label" style="font-family:Arial Black">
+				@Html.DisplayNameFor(model => model.Direccion)
+			</div>
+			<div class="display-field" style="color:Blue">
+				@Html.DisplayFor(model => model.Direccion)
+			</div>
+			<div class="display-label" style="font-family:Arial Black">
+				@Html.DisplayNameFor(model => model.IdRol)
+			</div>
+			<div class="display-field" style="color:Blue">
+				@Html.DisplayFor(model => model.IdRol)
+			</div>
+			<p>
+				<input id="Submit1" onclick="return confirm('Seguro que quiere Removerlo ?')"
+					   type="submit" value="Remove" style="color:Navy;font-family:Arial; font-size:large" />
+			</p>
+		</fieldset>
+	}
+	<div style="color:Blue;font-family:Arial">
+		@Html.ActionLink("Volver a Usuarios", "ShowAllUserDetails")
+	</div>
+</body>
+</html>  

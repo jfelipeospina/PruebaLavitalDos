@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+@if (TempData["error"] != null)
+{
+    @Html.Raw(TempData["error"]);
+}
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Aplicacion</legend> @Html.AntiForgeryToken() @Html.ValidationSummary(true) @if (@ViewBag.Message != null)
+        {<div style="border: 1px solid red"> @ViewBag.Message </div>} <table>
+            <tr>
+                <td>@Html.Label("Usuario")</td>
+                <td>@Html.TextBox("Usuario")</td>
+                <td>@Html.ValidationMessage("Usuario")</td>
+            </tr>
+            <tr>
+                <td> @Html.Label("Contraseña") </td>
+                <td> @Html.Password("Contraseña") </td>
+                <td> @Html.ValidationMessage("Contraseña") </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Login" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+}  

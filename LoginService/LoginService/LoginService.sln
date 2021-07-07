@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginService", "LoginService\LoginService.csproj", "{A9B0CF6D-C7F0-4986-9168-6F6267C08FF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{6693ABF7-5EEF-4F90-AEFB-873F98AD7BFF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A9B0CF6D-C7F0-4986-9168-6F6267C08FF9} = {A9B0CF6D-C7F0-4986-9168-6F6267C08FF9}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9B0CF6D-C7F0-4986-9168-6F6267C08FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9B0CF6D-C7F0-4986-9168-6F6267C08FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9B0CF6D-C7F0-4986-9168-6F6267C08FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9B0CF6D-C7F0-4986-9168-6F6267C08FF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6693ABF7-5EEF-4F90-AEFB-873F98AD7BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6693ABF7-5EEF-4F90-AEFB-873F98AD7BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6693ABF7-5EEF-4F90-AEFB-873F98AD7BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6693ABF7-5EEF-4F90-AEFB-873F98AD7BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {357D515F-D61D-49E1-B58F-9DBDC9372476}
+	EndGlobalSection
+EndGlobal

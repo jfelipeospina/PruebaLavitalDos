@@ -1,0 +1,104 @@
+﻿@model ProyectoUsuario.Models.UserDetailsModel
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Detalle de Usuarios</title>
+</head>
+<body>
+	<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+	<script src="~/Scripts/jquery.validate.min.js"></script>
+	<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+	<div style="font-family:Arial Black;">
+		<h2 style="background-color: Yellow;color: Blue; text-align: center; font-style: oblique">Formulario</h2>
+		@*<h2 style="text-align:center"></h2>*@
+		<p>
+			@*<p style="text-align:center">*@
+			@Html.ActionLink(linkText: "Nuevo Usuario", actionName: "InsertUser", controllerName: "Home")
+		</p>
+		<br />
+		<br />
+		<table border="1" align="center">
+			<tr>
+				<th style="background-color:orange;color:blue">
+					@Html.DisplayNameFor(model => model.Id)
+				</th>
+				<th style="background-color:orange;color:blue">
+					@Html.DisplayNameFor(model => model.Usuario)
+				</th>
+				<th style="background-color: orange;color: blue">
+					@Html.DisplayNameFor(model => model.Nombre)
+				</th>
+				<th style="background-color: orange;color: blue">
+					@Html.DisplayNameFor(model => model.Direccion)
+				</th>
+				<th style="background-color: orange;color: blue">
+					@Html.DisplayNameFor(model => model.IdRol)
+				</th>
+			</tr>
+
+			@foreach (var item in Model.ShowallUser)
+		{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Id)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Usuario)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Nombre)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Direccion)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.IdRol)
+			</td>
+			<td>
+
+				@Html.ActionLink("Modify", "Edit", new { Id = item.Id }) |
+
+				@Html.ActionLink("Detail", "Details", new { Id = item.Id }) |
+				@Html.ActionLink("Remove", "Delete", new { Id = item.Id },
+				new { onclick = "return confirm('Seguro que quiere Eliminar?');" })
+			</td>
+		</tr>
+
+			}
+		</table>
+		@if (TempData["result1"] != null)
+		{
+			<script type="text/javascript">
+
+                alert("Registro Insertado");
+			</script>
+
+		}
+		@if (TempData["result2"] != null)
+		{
+			<script type="text/javascript">
+
+                alert("Registro Actualizado");
+			</script>
+
+		}
+		@if (TempData["result3"] != null)
+		{
+			<script type="text/javascript">
+
+             alert("Registro Borrado");
+			</script>
+
+		}
+		<br />
+		<br />
+		<footer>
+			<p style="background-color: Yellow;text-align:center ; color:blue">© @DateTime.Now.ToLocalTime()</p> @*Add Date Time*@
+		</footer>
+	</div>
+</body>
+</html>  

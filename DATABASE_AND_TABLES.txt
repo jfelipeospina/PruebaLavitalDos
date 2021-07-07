@@ -1,0 +1,48 @@
+CREATE DATABASE Prueba
+use Prueba
+
+
+CREATE TABLE TBL_PERMISO
+(
+Id INT PRIMARY KEY NOT NULL IDENTITY (1,1),
+NombrePermiso varchar(50),
+Descripcion varchar(100),
+);
+
+INSERT INTO TBL_PERMISO (NombrePermiso,Descripcion ) values ('VER','PUEDE VISUALIZAR USUARIOS')
+INSERT INTO TBL_PERMISO (NombrePermiso,Descripcion ) values ('CREAR','PUEDE CREAR USUARIOS')
+INSERT INTO TBL_PERMISO (NombrePermiso,Descripcion ) values ('INSERTAR','PUEDE INSERTAR USUARIOS')
+INSERT INTO TBL_PERMISO (NombrePermiso,Descripcion ) values ('ELIMINAR','PUEDE ELIMINAR USUARIOS')
+
+
+CREATE TABLE TBL_ROL
+(
+Id INT ,
+NombreRol varchar(50),
+IdPermiso INT,
+CONSTRAINT FK_ROL_PERMISO FOREIGN KEY (IdPermiso) REFERENCES TBL_PERMISO (Id)
+);
+
+INSERT INTO TBL_ROL (Id,NombreRol,IdPermiso ) values (1,'ADMIN',1)
+INSERT INTO TBL_ROL (Id,NombreRol,IdPermiso ) values (1,'ADMIN',2)
+INSERT INTO TBL_ROL (Id,NombreRol,IdPermiso ) values (1,'ADMIN',3)
+INSERT INTO TBL_ROL (Id,NombreRol,IdPermiso ) values (1,'ADMIN',4)
+INSERT INTO TBL_ROL (Id,NombreRol,IdPermiso ) values (2,'NORMAL',1)
+
+
+CREATE TABLE TBL_USUARIO
+(
+Id INT PRIMARY KEY NOT NULL IDENTITY (1,1),
+Usuario varchar(20),
+Contraseña varchar(20),
+Nombre varchar(50),
+Direccion varchar(50),
+IdRol INT,
+CONSTRAINT FK_USUARIO_ROL FOREIGN KEY (IdRol) REFERENCES TBL_ROL (Id)
+);
+
+INSERT INTO TBL_USUARIO (Usuario,Contraseña,Nombre,Direccion,IdRol ) values ('usuarioadmin','12345','Juan Admin','CalleFalsa123',1)
+INSERT INTO TBL_USUARIO (Usuario,Contraseña,Nombre,Direccion,IdRol ) values ('usuarionormal','98765','Juan Normal','CalleReal123',2)
+
+select * From TBL_USUARIO
+

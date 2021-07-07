@@ -1,0 +1,12 @@
+C:\Users\juand\source\repos\LoginService\LoginService\bin\LoginService.dll.config
+C:\Users\juand\source\repos\LoginService\LoginService\bin\LoginService.dll
+C:\Users\juand\source\repos\LoginService\LoginService\bin\LoginService.pdb
+C:\Users\juand\source\repos\LoginService\LoginService\bin\EntityFramework.dll
+C:\Users\juand\source\repos\LoginService\LoginService\bin\EntityFramework.SqlServer.dll
+C:\Users\juand\source\repos\LoginService\LoginService\bin\EntityFramework.xml
+C:\Users\juand\source\repos\LoginService\LoginService\bin\EntityFramework.SqlServer.xml
+C:\Users\juand\source\repos\LoginService\LoginService\obj\Debug\LoginService.csproj.AssemblyReference.cache
+C:\Users\juand\source\repos\LoginService\LoginService\obj\Debug\LoginService.csproj.CoreCompileInputs.cache
+C:\Users\juand\source\repos\LoginService\LoginService\obj\Debug\LoginService.csproj.CopyComplete
+C:\Users\juand\source\repos\LoginService\LoginService\obj\Debug\LoginService.dll
+C:\Users\juand\source\repos\LoginService\LoginService\obj\Debug\LoginService.pdb

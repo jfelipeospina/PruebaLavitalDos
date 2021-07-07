@@ -1,0 +1,64 @@
+USE Prueba  
+GO  
+SET ANSI_NULLS ON  
+GO  
+SET QUOTED_IDENTIFIER ON  
+GO  
+create PROCEDURE [dbo].[Usp_InsertUpdateDelete_User]  
+@Id INT = NULL
+,@Usuario VARCHAR(20) = NULL
+,@Nombre VARCHAR(20)  = NULL
+,@Direccion VARCHAR(50) =NULL
+,@IdRol Int = NULL
+,@Query INT
+AS  
+BEGIN  
+IF (@Query = 1)  
+BEGIN  
+
+INSERT INTO TBL_USUARIO(  
+Usuario  
+,Nombre  
+,Direccion  
+,IdRol  
+)  
+VALUES (  
+@Usuario
+,@Nombre
+,@Direccion  
+,@IdRol
+)  
+IF (@@ROWCOUNT > 0)  
+BEGIN  
+SELECT 'Insert'  
+END  
+END  
+IF (@Query = 2)  
+BEGIN  
+UPDATE TBL_USUARIO  
+SET Usuario = @Usuario
+,Nombre = @Nombre  
+,Direccion = @Direccion  
+,IdRol  = @IdRol  
+WHERE Id = @Id  
+SELECT 'Update'  
+END  
+IF (@Query = 3)  
+BEGIN  
+DELETE  
+FROM TBL_USUARIO  
+WHERE Id = @Id
+SELECT 'Deleted'  
+END  
+IF (@Query = 4)  
+BEGIN  
+SELECT Id,Usuario,Nombre,Direccion,IdRol  
+FROM TBL_USUARIO  
+END  
+END  
+IF (@Query = 5)  
+BEGIN  
+SELECT Id,Usuario,Nombre,Direccion,IdRol  
+FROM TBL_USUARIO  
+WHERE Id = @Id  
+END   

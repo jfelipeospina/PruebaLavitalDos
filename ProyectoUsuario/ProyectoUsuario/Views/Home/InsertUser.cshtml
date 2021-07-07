@@ -1,0 +1,59 @@
+﻿@model ProyectoUsuario.Models.UserDetailsModel
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Insertar Usuario</title>
+</head>
+<body>
+	<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+	<script src="~/Scripts/jquery.validate.min.js"></script>
+	<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+	@using (Html.BeginForm())
+	{
+
+		@Html.ValidationSummary(true)
+		<fieldset>
+			<legend style="font-family:Arial Black;color:Green">Usuario</legend>
+			<div class="editor-label" style="font-family:Arial Black">
+				@Html.LabelFor(model => model.Usuario)
+			</div>
+			<div class="editor-field" style="color:Red;font-family:Arial">
+				@Html.EditorFor(model => model.Usuario)
+				@Html.ValidationMessageFor(model => model.Usuario)
+			</div>
+			<div class="editor-label" style="font-family:Arial Black">
+				@Html.LabelFor(model => model.Nombre)
+			</div>
+			<div class="editor-field" style="color:Red;font-family:Arial">
+				@Html.EditorFor(model => model.Nombre)
+				@Html.ValidationMessageFor(model => model.Nombre)
+			</div>
+			<div class="editor-label" style="font-family:Arial Black">
+				@Html.LabelFor(model => model.Direccion)
+			</div>
+			<div class="editor-field" style="color:Red;font-family:Arial">
+				@Html.EditorFor(model => model.Direccion)
+				@Html.ValidationMessageFor(model => model.Direccion)
+			</div>
+			<div class="editor-label" style="font-family:Arial Black">
+				@Html.LabelFor(model => model.IdRol)
+			</div>
+			<div class="editor-field" style="color:Red;font-family:Arial">
+				@Html.EditorFor(model => model.IdRol)
+				@Html.ValidationMessageFor(model => model.IdRol)
+			</div>			
+			<p>
+				<input type="submit" value="Insert" style="color:Navy;font-family:Arial; font-size:large" />
+				<input type="reset" value="Reset" style="color:Navy;font-family:Arial; font-size:large" />
+			</p>
+		</fieldset>
+	}
+	<div style="color:Blue;font-family:Arial">
+		@Html.ActionLink("Regresar a la pagina de Usuarios", "ShowAllUserDetails")
+	</div>
+</body>
+</html>  

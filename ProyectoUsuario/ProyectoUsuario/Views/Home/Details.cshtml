@@ -1,0 +1,49 @@
+﻿@model ProyectoUsuario.Models.UserDetailsModel
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Details</title>
+</head>
+<body>
+	<fieldset>
+		<legend style="font-family:Arial Black;color:Green">Reporte de Usuarios</legend>
+
+		<div class="display-label" style="font-family:Arial Black">
+			@Html.DisplayNameFor(model => model.Usuario)
+		</div>
+		<div class="display-field" style="color:Blue">
+			@Html.DisplayFor(model => model.Usuario)
+		</div>
+
+		<div class="display-label" style="font-family:Arial Black">
+			@Html.DisplayNameFor(model => model.Nombre)
+		</div>
+		<div class="display-field" style="color:Blue">
+			@Html.DisplayFor(model => model.Nombre)
+		</div>
+
+		<div class="display-label" style="font-family:Arial Black">
+			@Html.DisplayNameFor(model => model.Direccion)
+		</div>
+		<div class="display-field" style="color:Blue">
+			@Html.DisplayFor(model => model.Direccion)
+		</div>
+
+		<div class="display-label" style="font-family:Arial Black">
+			@Html.DisplayNameFor(model => model.IdRol)
+		</div>
+		<div class="display-field" style="color:Blue">
+			@Html.DisplayFor(model => model.IdRol)
+		</div>
+	</fieldset>
+	<p style="color:Blue;font-family:Arial">
+		@Html.ActionLink("Regresar a Usuarios", "ShowAllUserDetails")
+	</p>
+</body>
+</html> 

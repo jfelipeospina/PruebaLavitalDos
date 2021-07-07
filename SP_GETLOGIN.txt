@@ -1,0 +1,28 @@
+USE [Prueba]
+GO
+/****** Object:  StoredProcedure [dbo].[GetLogin]    Script Date: 7/07/2021 7:50:43 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Felipe Ospina
+-- Create date: 06072021
+-- Description: Procedimiento para el login
+-- =============================================
+
+CREATE PROCEDURE [dbo].[GetLogin]  
+    @Usuario VARCHAR(20),  
+    @Contraseña varchar(20)  
+AS  
+SET NOCOUNT ON  
+
+ BEGIN  
+  
+ IF EXISTS(SELECT USUARIO,NOMBRE,DIRECCION,IDROL FROM TBL_USUARIO WHERE Usuario = @Usuario AND Contraseña = @Contraseña )  
+    SELECT cast(IDROL as varchar) AS UserExists  from TBL_USUARIO where Usuario=@Usuario
+ELSE  
+ BEGIN  
+SELECT 'User Does not Exists' AS UserExists  
+ END  
+ END
